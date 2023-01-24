@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/navigation_bottom">
+
+
+
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.example.imdbroom.ui.view.DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        android:label="Details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_nav_details_self"
+            app:destination="@id/nav_details"
+            app:popUpTo="@id/nav_upcoming" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_favorites"
+        android:name="com.example.imdbroom.ui.view.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite"
+        android:label="Favorites">
+        <action
+            android:id="@+id/nav_details"
+            app:destination="@id/nav_details"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <navigation android:id="@+id/navigation_bottom"
+        app:startDestination="@id/nav_upcoming">
+        <fragment
+            android:id="@+id/nav_upcoming"
+            android:name="com.example.imdbroom.ui.view.HomeFragment"
+            android:label="Upcoming"
+            tools:layout="@layout/fragment_home">
+            <argument
+                android:name="moviefilter"
+                android:defaultValue="upcoming"
+                app:argType="string" />
+            <action
+                android:id="@+id/nav_details"
+                app:destination="@id/nav_details" />
+
+        </fragment>
+        <fragment
+            android:id="@+id/nav_popular"
+            android:name="com.example.imdbroom.ui.view.HomeFragment"
+            android:label="Popular"
+            tools:layout="@layout/fragment_home">
+            <argument
+                android:name="moviefilter"
+                android:defaultValue="popular"
+                app:argType="string" />
+            <action
+                android:id="@+id/nav_details"
+                app:destination="@id/nav_details" />
+        </fragment>
+        <fragment
+            android:id="@+id/nav_trending"
+            android:name="com.example.imdbroom.ui.view.HomeFragment"
+            android:label="Trending"
+            tools:layout="@layout/fragment_home">
+            <argument
+                android:name="moviefilter"
+                android:defaultValue="trending"
+                app:argType="string" />
+            <action
+                android:id="@+id/nav_details"
+                app:destination="@id/nav_details" />
+        </fragment>
+        <fragment
+            android:id="@+id/nav_rated"
+            android:name="com.example.imdbroom.ui.view.HomeFragment"
+            android:label="Top Rated"
+            tools:layout="@layout/fragment_home">
+            <argument
+                android:name="moviefilter"
+                android:defaultValue="top_rated"
+                app:argType="string" />
+            <action
+                android:id="@+id/nav_details"
+                app:destination="@id/nav_details" />
+        </fragment>
+    </navigation>
+
+</navigation>

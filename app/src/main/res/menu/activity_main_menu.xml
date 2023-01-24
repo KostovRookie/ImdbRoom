@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_upcoming"
+        android:icon="@drawable/edit_text_background"
+        android:title="Нови" />
+    <item
+        android:id="@+id/nav_popular"
+        android:icon="@drawable/ic_favorite"
+        android:title="Популярни" />
+    <item
+        android:id="@+id/nav_trending"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="Набиращи" />
+
+    <item
+        android:id="@+id/nav_rated"
+        android:icon="@drawable/ic_rate"
+        android:title="ТОП" />
+
+</menu>
