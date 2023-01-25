@@ -59,7 +59,8 @@ class HomeFragment : Fragment() {
         viewModel.movies.observe(viewLifecycleOwner) { listResult ->
             lifecycleScope.launch {
                 binding.recyclerView.layoutManager =
-                    GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false)
+                    GridLayoutManager(activity, 2, LinearLayoutManager.VERTICAL, false) // in grid layout i can show more than one
+                                                                                                             // item on a single line of RV
                 binding.recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
                     header = LoaderAdapter(),
                     footer = LoaderAdapter()

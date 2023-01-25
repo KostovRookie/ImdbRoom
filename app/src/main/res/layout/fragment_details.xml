@@ -103,8 +103,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_average"
-                 />
+                app:layout_constraintTop_toBottomOf="@id/text_average" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -133,7 +132,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerView"
-                tools:text="Description long long" />
+                tools:text="Description long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longgDescription long longDescription long longDescription long longDescription long longDescription long long" />
 
             <View
                 android:id="@+id/view"

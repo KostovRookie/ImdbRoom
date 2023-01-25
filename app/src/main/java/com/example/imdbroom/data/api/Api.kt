@@ -30,7 +30,7 @@ interface Api {
     ): Response<MoviesResult>
 
 
-    @GET("/3/search/movie?api_key=" + Constants.APIKEY.KEY)
+    @GET("/3/search/movie?api_key=" + Constants.APIKEY.KEY)   // live search in query imbd
     suspend fun getSearch
                 (@Query("query") name: String,
                  @Query("page") page: Int = 1)

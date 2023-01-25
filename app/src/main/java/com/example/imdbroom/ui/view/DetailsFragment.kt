@@ -2,13 +2,12 @@ package com.example.imdbroom.ui.view
 
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -45,8 +44,6 @@ class DetailsFragment : Fragment(), View.OnClickListener {
         viewModel.progressBar.observe(viewLifecycleOwner) {
             if (it) showProgressBar() else (hideProgressBar())
         }
-
-
         observer()
     }
 
@@ -56,13 +53,10 @@ class DetailsFragment : Fragment(), View.OnClickListener {
                 viewModel.favoriteMovie()
                 viewModel.checkFavorite()
             }
-
             R.id.button_back -> {
                 findNavController().navigateUp()
             }
-
         }
-
     }
 
 
@@ -70,8 +64,7 @@ class DetailsFragment : Fragment(), View.OnClickListener {
         val id = args.id
 
         viewModel.getMovieById(id)
-
-        viewModel.movieDetails.observe(viewLifecycleOwner, Observer {
+        viewModel.movieDetails.observe(viewLifecycleOwner) {
             binding.apply {
                 textTitle.text = it.title
                 textReleaseDate.text = it.release_date
@@ -83,11 +76,10 @@ class DetailsFragment : Fragment(), View.OnClickListener {
                     .into(imgMovieLargePoster)
             }
             checkFavorite()
-        })
-
-        viewModel.errorMessage.observe(viewLifecycleOwner, Observer {
+        }
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
             Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
-        })
+        }
     }
 
     private fun checkFavorite() {
@@ -101,7 +93,6 @@ class DetailsFragment : Fragment(), View.OnClickListener {
             }
         }
         viewModel.checkFavorite()
-
     }
 
     private fun showProgressBar() {

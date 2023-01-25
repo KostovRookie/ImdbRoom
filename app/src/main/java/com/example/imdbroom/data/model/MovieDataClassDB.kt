@@ -7,7 +7,7 @@ import com.example.imdbroom.utils.Constants
 import kotlinx.serialization.Serializable
 
 @Serializable
-@Entity(tableName = Constants.TABLE.NAME)
+@Entity(tableName = Constants.dataBaseName.constantName)
 data class MovieDataClassDB(
     @PrimaryKey
     val id: Int,

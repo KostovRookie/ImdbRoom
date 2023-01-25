@@ -20,8 +20,6 @@ class DetailsViewModel(
     private var _title = MutableLiveData<String>()
     val title: LiveData<String> = _title
 
-    private val _similar = MutableLiveData<List<MoviesResult>>()
-
     private val _movieDetails = MutableLiveData<MoviesResult>()
     val movieDetails: MutableLiveData<MoviesResult> = _movieDetails
 

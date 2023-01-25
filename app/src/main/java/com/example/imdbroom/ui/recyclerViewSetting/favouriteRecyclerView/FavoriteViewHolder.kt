@@ -19,9 +19,8 @@ class FavoriteViewHolder(private val binding: RowFavoritesBinding) :
         movieTitle.text = movie.title
         movieRate.text = String.format("%.1f", movie.voteAverage)
 
-        val requestOption = RequestOptions()
-            .placeholder(R.drawable.poster_placeholder)
-            .error(R.drawable.person_placeholder)
+     val requestOption = RequestOptions().placeholder(R.drawable.poster_placeholder)
+//            .error(R.drawable.person_placeholder)
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOption)

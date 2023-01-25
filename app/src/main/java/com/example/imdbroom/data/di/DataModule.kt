@@ -27,16 +27,20 @@ object DataModule {
 
     private fun movieModule(): Module {
         return module {
-            single { MovieRepositoryImpl(get()) }
+            single {
+                MovieRepositoryImpl(get())
+            }
 
         }
     }
 
 
 
-    private fun daoModule(): Module {
+    private fun daoModule(): Module {    //adding favourites DB to bitcoin
         return module {
-            single { FavoriteDatabase.getDataBase(androidContext()).getFavoriteDao() }
+            single {
+                FavoriteDatabase.getDataBase(androidContext()).getFavoriteDao()
+            }
         }
     }
 
@@ -56,10 +60,10 @@ object DataModule {
                     .build()
             }
 
-            single {
+            single {   // adding to bitcoin
                 Retrofit.Builder()
                     .baseUrl(Constants.URL.BASE_URL)
-                    .addConverterFactory(jsonDefaultInstance.asConverterFactory(contentType))
+                    .addConverterFactory(jsonDefaultInstance.asConverterFactory(contentType))  //ignoreuknown keys plugin
                     .build()
                     .create(Api::class.java)
             }

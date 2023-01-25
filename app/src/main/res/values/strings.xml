@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Филмчета по imdb</string>
+    <string name="app_name">Elders imdb</string>
     <string name="Description">описание</string>
     <string name="upcoming">предстоят</string>
     <string name="popular">известни</string>
@@ -10,7 +10,7 @@
     <string name="log_out">Излез</string>
     <string name="log_out_title">Напускане</string>
     <string name="log_out_message">Верно ли?</string>
-    <string name="trailer_not_availabe"></string>
     <string name="login">лог</string>
     <string name="signup">сайн</string>
+    <string name="elders_app">Elders App</string>
 </resources>
