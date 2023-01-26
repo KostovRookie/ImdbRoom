@@ -13,4 +13,5 @@
     <string name="login">лог</string>
     <string name="signup">сайн</string>
     <string name="elders_app">Elders App</string>
+    <string name="menuStrings">Нови</string>
 </resources>

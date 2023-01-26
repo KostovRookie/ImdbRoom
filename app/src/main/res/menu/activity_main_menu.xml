@@ -4,7 +4,7 @@
     <item
         android:id="@+id/nav_upcoming"
         android:icon="@drawable/edit_text_background"
-        android:title="Нови" />
+        android:title="@string/menuStrings" />
     <item
         android:id="@+id/nav_popular"
         android:icon="@drawable/ic_favorite"

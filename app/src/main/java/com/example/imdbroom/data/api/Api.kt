@@ -24,8 +24,8 @@ interface Api {
     @GET("/3/movie/{movie_id}?api_key=" + Constants.APIKEY.KEY)
     suspend fun getMovieById(
         @Path(
-            value = "movie_id",
-            encoded = true
+            value = "movie_id"
+        //    encoded = true
         ) movie_id: Int
     ): Response<MoviesResult>
 

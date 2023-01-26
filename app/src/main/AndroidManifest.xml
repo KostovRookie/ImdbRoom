@@ -19,7 +19,7 @@
 
 
         <activity
-            android:name=".ui.view.SplashScreenActivity"
+            android:name=".ui.view.ElderssScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
