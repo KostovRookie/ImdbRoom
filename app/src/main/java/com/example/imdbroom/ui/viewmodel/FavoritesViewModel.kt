@@ -14,10 +14,13 @@ class FavoritesViewModel(private val favoriteDao: FavoriteDao) : ViewModel() {
     private val _movies = MutableLiveData<List<MovieDataClassDB>>()
     val movies: LiveData<List<MovieDataClassDB>> = _movies
 
+    //favorite fragment is working with room database
+    //some error persists as i have to tap 2 times to like/delete a favorite item
+
 
      fun listFavorites(){
          viewModelScope.launch(Dispatchers.IO){
-             _movies.postValue(favoriteDao.getAllFavorites())
+             _movies.postValue(favoriteDao.getAllFavorites()) // reference to dao
          }
     }
 

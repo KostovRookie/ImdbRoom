@@ -10,27 +10,27 @@ import retrofit2.http.Query
 
 interface Api {
 
-    @GET("/3/movie/{type}?api_key=" + Constants.APIKEY.KEY)
+    @GET("/3/movie/{type}?api_key=" + Constants.apiKey.KEY)
     suspend fun getMovieList(
         @Path(value = "type") type: String,
         @Query("page") page: Int = 1
     ): Response<MoviesModel>
 
-    @GET("/3/trending/movie/day?api_key=" + Constants.APIKEY.KEY)
+    @GET("/3/trending/movie/day?api_key=" + Constants.apiKey.KEY)
     suspend fun getTrendingMovies
                 (@Query("page") page: Int = 1)
     : Response<MoviesModel>
 
-    @GET("/3/movie/{movie_id}?api_key=" + Constants.APIKEY.KEY)
+    @GET("/3/movie/{movie_id}?api_key=" + Constants.apiKey.KEY)
     suspend fun getMovieById(
         @Path(
-            value = "movie_id"
-        //    encoded = true
+            value = "movie_id",
+            encoded = true
         ) movie_id: Int
     ): Response<MoviesResult>
 
 
-    @GET("/3/search/movie?api_key=" + Constants.APIKEY.KEY)   // live search in query imbd
+    @GET("/3/search/movie?api_key=" + Constants.apiKey.KEY)   // live search in query imbd
     suspend fun getSearch
                 (@Query("query") name: String,
                  @Query("page") page: Int = 1)

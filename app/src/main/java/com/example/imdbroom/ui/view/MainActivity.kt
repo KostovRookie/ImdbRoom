@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        setupBottomNavigationView()
+        BottomNavigation()
 
-        viewModel.checkIfUserIsLogger()
+        viewModel.checkIfLoginScreenPassed()
 
         viewModel.verify.observe(this) {
             if (!it) {
@@ -57,18 +57,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.fabExpand.setOnClickListener {
+        binding.fabExpand.setOnClickListener { //inflate buttons setting
             buttonClicked()
 
         }
         binding.fabFavorites.setOnClickListener {
             buttonClicked()
             findNavController(binding.fragmentContainerView.id)
-                .navigate(R.id.nav_favorites)
+                .navigate(R.id.nav_favorites)   // go to favourites fragment
 
         }
         binding.fabLogout.setOnClickListener {
-            AlertDialog.Builder(this)
+            AlertDialog.Builder(this)    // leave app button and dialog
                 .setTitle(getString(R.string.log_out_title))
                 .setMessage(getString(R.string.log_out_message))
                 .setPositiveButton(getString(R.string.log_out)) { _, _ ->
@@ -87,12 +87,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buttonClicked() {
-        setVisibility(clicked)
+        setVisibility(clicked) // animation for buttons
         setAnimation(clicked)
         clicked = !clicked
     }
 
-    private fun setAnimation(clicked: Boolean) {
+    private fun setAnimation(clicked: Boolean) {   // animation for buttons
         if (!clicked) {
             binding.fabFavorites.startAnimation(fromBottom)
             binding.fabLogout.startAnimation(fromBottom)
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupBottomNavigationView() {
+    private fun BottomNavigation() {
         val navHostFragment = getNavHostFragment()
         binding.bottomNavigationView.setupWithNavController(navHostFragment.navController)
 
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         setVisibilityByDestination(navController)
     }
 
-    private fun setVisibilityByDestination(navController: NavController) {
+    private fun setVisibilityByDestination(navController: NavController) {  // settings for visibility of buttons - something wrong
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.nav_favorites -> {

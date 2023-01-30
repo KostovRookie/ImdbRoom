@@ -65,7 +65,7 @@ class FavoriteFragment : Fragment(), View.OnClickListener {
     }
 
     private fun onItemDelete(movie: MovieDataClassDB) {
-        viewModel.deleteFavorite(movie)
+        viewModel.deleteFavorite(movie) // delete item
         onResume()
     }
 

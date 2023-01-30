@@ -15,7 +15,9 @@ class FavoriteViewHolder(private val binding: RowFavoritesBinding) :
     private var movieTitle = binding.textTitle
     private var movieRate = binding.textRate
 
-    fun bind(movie: MovieDataClassDB, onclick: (Int) -> Unit, onClickDelete: (MovieDataClassDB) -> Unit) {
+    fun bind(movie: MovieDataClassDB,
+             onclick: (Int) -> Unit
+             , onClickDelete: (MovieDataClassDB) -> Unit) {
         movieTitle.text = movie.title
         movieRate.text = String.format("%.1f", movie.voteAverage)
 
@@ -27,11 +29,6 @@ class FavoriteViewHolder(private val binding: RowFavoritesBinding) :
             .load(Constants.URL.IMAGE_BASE + movie.posterPath)
             .into(binding.imgMoviePoster)
 
-
-        Glide.with(itemView.context)
-            .applyDefaultRequestOptions(requestOption)
-            .load(Constants.URL.IMAGE_BASE + movie.backdropPath)
-            .into(binding.imgBack)
 
         binding.imgMoviePoster.setOnClickListener {
             onclick(movie.id)

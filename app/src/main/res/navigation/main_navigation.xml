@@ -39,7 +39,7 @@
         <fragment
             android:id="@+id/nav_upcoming"
             android:name="com.example.imdbroom.ui.view.HomeFragment"
-            android:label="Upcoming"
+            android:label="Предстоят"
             tools:layout="@layout/fragment_home">
             <argument
                 android:name="moviefilter"
@@ -53,7 +53,7 @@
         <fragment
             android:id="@+id/nav_popular"
             android:name="com.example.imdbroom.ui.view.HomeFragment"
-            android:label="Popular"
+            android:label="Популярни"
             tools:layout="@layout/fragment_home">
             <argument
                 android:name="moviefilter"
@@ -66,7 +66,7 @@
         <fragment
             android:id="@+id/nav_trending"
             android:name="com.example.imdbroom.ui.view.HomeFragment"
-            android:label="Trending"
+            android:label="Нарастващи"
             tools:layout="@layout/fragment_home">
             <argument
                 android:name="moviefilter"
@@ -79,7 +79,7 @@
         <fragment
             android:id="@+id/nav_rated"
             android:name="com.example.imdbroom.ui.view.HomeFragment"
-            android:label="Top Rated"
+            android:label="ТОП"
             tools:layout="@layout/fragment_home">
             <argument
                 android:name="moviefilter"

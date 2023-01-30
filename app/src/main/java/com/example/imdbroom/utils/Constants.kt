@@ -5,10 +5,10 @@ class Constants private constructor(){
         const val BASE_URL = "https://api.themoviedb.org"
         const val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
     }
-    object APIKEY{
+    object apiKey{
         const val KEY = "33260b6f48a3b9c38633e3a5cb1c9443"
     }
-    object BUNDLE {
+    object filterMovies {
         const val MOVIEFILTER = "moviefilter"
     }
     object dataBaseName{

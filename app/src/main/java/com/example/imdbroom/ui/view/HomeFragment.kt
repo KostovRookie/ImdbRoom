@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        movieFilter = requireArguments().getString(Constants.BUNDLE.MOVIEFILTER, "popular")
+        movieFilter = requireArguments().getString(Constants.filterMovies.MOVIEFILTER, "popular")
 
         initSearchBar()
         observe()
